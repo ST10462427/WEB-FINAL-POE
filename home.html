@@ -1,0 +1,96 @@
+<!-- home.html (Homepage) -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="description" content="ST10462427 Hi" />
+  <title>SOS CHILDREN'S VILLAGES</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Add CSS styles for lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>                                                                                                      
+        <center>
+          <img src="img/SOS Childrens Villages phot.png" alt="SOS CHILDREN'S VILLAGES"
+            style="width: 30px; height: 30px; margin-left: 10px;">
+          <span class="overlap-text">SOS CHILDREN'S VILLAGES</span>
+        </center>
+      </h1>
+     
+        <a href="home.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="services.html">Services</a> |
+        <a href="news.html">News</a> |
+        <a href="contact.html">Contact</a> |
+      
+    </nav>
+  </header>
+  <main style="background: url(img/Orphans-KMMQS.png); background-repeat: no-repeat; background-size:cover; background-position: center; margin: 0%; margin-bottom: -20px;">
+    <h1 style=" font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    -webkit-text-stroke: 1.5px black;
+    color: white;
+    font-size: xxx-large;
+    ">Welcome to SOS Children's Village in South Africa</h1>
+    <center>
+      <p id="homeText" >Our goal is to help orphaned and abandoned children find a place to call home. Many people don’t realize that a child’s sense of culture and belonging comes from a place where their basic needs are met, including food, healthcare, and shelter. SOS Children’s Village in South Africa provides these children with a safe environment, allowing them to escape loneliness and experience the joys of childhood—playing and engaging in activities that children with parents often take for granted.
+
+      </p>
+    </center>
+    <!-- <div class="overlay-image" >
+      <img src="img/Orphans-KMMQS.png" alt="Overlay Image">
+    </div> -->
+    <img src="img/Orphans-KMMQS.png" class="lightbox-image" style="width: 200px;height: 200px; margin-left: 100px;">
+    <br>
+
+  </main>
+  <footer>
+    <p id="date-stamp">
+      &copy;
+      <script>
+        document.getElementById("date-stamp").innerHTML = new Date().getFullYear() + " SOS Children's Village South Africa";
+      </script>
+
+    </p>
+    <script>
+      // Lightbox functionality
+      const lightboxImages = document.querySelectorAll('.lightbox-image');
+
+      lightboxImages.forEach((image) => {
+        image.addEventListener('click', () => {
+          const lightbox = document.createElement('div');
+          lightbox.classList.add('lightbox');
+          lightbox.innerHTML = `<img src="${image.src}">`;
+          document.body.appendChild(lightbox);
+          lightbox.addEventListener('click', () => {
+            lightbox.remove();
+          });
+        });
+      });
+    </script>
+  </footer>
+</body>
+
+</html>
